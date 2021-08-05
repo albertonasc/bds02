@@ -20,6 +20,7 @@ public class EventService {
 	@Autowired
 	private EventRepository repository;
 	
+	@Transactional(readOnly = true)
 	public Page<EventDTO> findAll(PageRequest pageable) {
 		Page<Event> list = repository.findAll(pageable);
 
